@@ -1,0 +1,34 @@
+{
+  "eventos": [
+    {
+      "id": 1,
+      "titulo": "Show Rock no Parque",
+      "descricao": "Clássicos do rock ao vivo.",
+      "cidade": "Uberlândia",
+      "categoria": "Show",
+      "local": "Parque Municipal",
+      "dataHoraInicio": "2025-12-15T20:00:00",
+      "dataHoraFim": "2025-12-15T22:00:00",
+      "gratuito": true,
+      "preco": null,
+      "imagemUrl": "https://picsum.photos/seed/show/600/400",
+      "destaque": true,
+      "status": "ativo"
+    },
+    {
+      "id": 2,
+      "titulo": "Feira de Artes",
+      "descricao": "Artesanato e gastronomia.",
+      "cidade": "Araguari",
+      "categoria": "Feira",
+      "local": "Praça Central",
+      "dataHoraInicio": "2025-12-10T09:00:00",
+      "dataHoraFim": "2025-12-10T17:00:00",
+      "gratuito": true,
+      "preco": null,
+      "imagemUrl": "https://picsum.photos/seed/feira/600/400",
+      "destaque": false,
+      "status": "ativo"
+    }
+  ]
+}
