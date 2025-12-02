@@ -1,7 +1,7 @@
 {
   "eventos": [
     {
-      "id": 1,
+      "id": "1",
       "titulo": "Show Rock no Parque",
       "descricao": "Clássicos do rock ao vivo.",
       "cidade": "Uberlândia",
@@ -16,7 +16,7 @@
       "status": "ativo"
     },
     {
-      "id": 2,
+      "id": "2",
       "titulo": "Feira de Artes",
       "descricao": "Artesanato e gastronomia.",
       "cidade": "Araguari",

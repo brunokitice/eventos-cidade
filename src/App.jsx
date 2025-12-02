@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import Home from "./pages/Home/Home";
-import CreateEvent from "./pages/CreateEvent/CreateEvent";
-import EditEvent from "./pages/EditEvent/EditEvent";
-import NotFound from "./pages/NotFound/NotFound";
-import "./styles/globals.css";
+import Home from "./components/pages/Home.jsx";
+import CreateEvent from "./components/pages/CreateEvent.jsx";
+import EditEvent from "./components/pages/EditEvent.jsx";
+import NotFound from "./components/pages/NotFound.jsx";
+import "./components/styles/globals.scss";
 
 export default function App() {
   return (
