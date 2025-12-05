@@ -12,6 +12,15 @@ export default function EventForm({ onFormSubmit, initialData, buttonText, isSub
     imagemUrl: ''
   });
 
+  const [errors, setErrors] = useState({});
+
+  const toLocalISOString = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    const localDate = new Date(date.getTime() - (date.getTimezoneOffset() * 60000));
+    return localDate.toISOString().slice(0, 16);
+  };
+
   useEffect(() => {
     if (initialData) {
       setEvento({
@@ -19,12 +28,25 @@ export default function EventForm({ onFormSubmit, initialData, buttonText, isSub
         descricao: initialData.descricao || '',
         cidade: initialData.cidade || '',
         local: initialData.local || '',
-        dataHoraInicio: initialData.dataHoraInicio ? new Date(initialData.dataHoraInicio).toISOString().slice(0, 16) : '',
-        dataHoraFim: initialData.dataHoraFim ? new Date(initialData.dataHoraFim).toISOString().slice(0, 16) : '',
+        dataHoraInicio: toLocalISOString(initialData.dataHoraInicio),
+        dataHoraFim: toLocalISOString(initialData.dataHoraFim),
         imagemUrl: initialData.imagemUrl || ''
       });
     }
   }, [initialData]);
+
+  function validate() {
+    const newErrors = {};
+    if (!evento.titulo) newErrors.titulo = true;
+    if (!evento.descricao) newErrors.descricao = true;
+    if (!evento.cidade) newErrors.cidade = true;
+    if (!evento.local) newErrors.local = true;
+    if (!evento.dataHoraInicio) newErrors.dataHoraInicio = true;
+    if (!evento.dataHoraFim) newErrors.dataHoraFim = true;
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -32,17 +54,23 @@ export default function EventForm({ onFormSubmit, initialData, buttonText, isSub
       ...prevEvento,
       [name]: value
     }));
+
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: false }));
+    }
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    onFormSubmit(evento);
+    if (validate()) {
+      onFormSubmit(evento);
+    }
   }
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <input
-        className={styles.input}
+        className={`${styles.input} ${errors.titulo ? styles.inputError : ''}`}
         name="titulo"
         placeholder="Título do evento"
         value={evento.titulo}
@@ -50,7 +78,7 @@ export default function EventForm({ onFormSubmit, initialData, buttonText, isSub
         disabled={isSubmitting}
       />
       <textarea
-        className={styles.input}
+        className={`${styles.input} ${errors.descricao ? styles.inputError : ''}`}
         name="descricao"
         placeholder="Descrição"
         value={evento.descricao}
@@ -58,7 +86,7 @@ export default function EventForm({ onFormSubmit, initialData, buttonText, isSub
         disabled={isSubmitting}
       />
       <input
-        className={styles.input}
+        className={`${styles.input} ${errors.cidade ? styles.inputError : ''}`}
         name="cidade"
         placeholder="Cidade"
         value={evento.cidade}
@@ -66,7 +94,7 @@ export default function EventForm({ onFormSubmit, initialData, buttonText, isSub
         disabled={isSubmitting}
       />
       <input
-        className={styles.input}
+        className={`${styles.input} ${errors.local ? styles.inputError : ''}`}
         name="local"
         placeholder="Local"
         value={evento.local}
@@ -74,7 +102,7 @@ export default function EventForm({ onFormSubmit, initialData, buttonText, isSub
         disabled={isSubmitting}
       />
       <input
-        className={styles.input}
+        className={`${styles.input} ${errors.dataHoraInicio ? styles.inputError : ''}`}
         type="datetime-local"
         name="dataHoraInicio"
         value={evento.dataHoraInicio}
@@ -82,7 +110,7 @@ export default function EventForm({ onFormSubmit, initialData, buttonText, isSub
         disabled={isSubmitting}
       />
       <input
-        className={styles.input}
+        className={`${styles.input} ${errors.dataHoraFim ? styles.inputError : ''}`}
         type="datetime-local"
         name="dataHoraFim"
         value={evento.dataHoraFim}

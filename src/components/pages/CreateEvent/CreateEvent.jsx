@@ -12,18 +12,6 @@ export default function CreateEvent() {
   });
 
   async function addEvent(eventoData) {
-    if (
-      !eventoData.titulo ||
-      !eventoData.descricao ||
-      !eventoData.cidade ||
-      !eventoData.local ||
-      !eventoData.dataHoraInicio ||
-      !eventoData.dataHoraFim
-    ) {
-      setStatus({ isSubmitting: false, message: "Preencha todos os campos obrigatórios!" });
-      return;
-    }
-
     setStatus({ isSubmitting: true, message: '' });
 
     try {

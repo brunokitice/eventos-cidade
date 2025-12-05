@@ -2,17 +2,17 @@ import { Link } from 'react-router-dom';
 import styles from './EventCard.module.css';
 
 export default function EventCard({ evento, onDeleteRequest }) {
-  function formatarDataLocal(dataString) {
-    if (!dataString) return 'Data inválida';
-    const data = new Date(dataString);
-    const dia = String(data.getUTCDate()).padStart(2, '0');
-    const mes = String(data.getUTCMonth() + 1).padStart(2, '0');
-    const ano = data.getUTCFullYear();
-    const horas = String(data.getUTCHours()).padStart(2, '0');
-    const minutos = String(data.getUTCMinutes()).padStart(2, '0');
+function formatarDataLocal(dataString) {
+  if (!dataString) return 'Data inválida';
+  const data = new Date(dataString);
+  const dia = String(data.getDate()).padStart(2, '0');
+  const mes = String(data.getMonth() + 1).padStart(2, '0');
+  const ano = data.getFullYear();
+  const horas = String(data.getHours()).padStart(2, '0');
+  const minutos = String(data.getMinutes()).padStart(2, '0');
 
-    return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
-  }
+  return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
+}
 
   return (
     <article className={styles.card}>
