@@ -42,3 +42,9 @@ npm start
 
 A aplicação estará disponível em `http://localhost:3000`.
 A API estará rodando em `http://localhost:5000`.
+
+<hr>
+
+## Alunos
+- Bruno Moragas Kitice - RA: 6113825
+- Luiz Gustavo Echaque Lima Barbosa - RA: 5164987
