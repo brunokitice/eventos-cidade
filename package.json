@@ -14,13 +14,12 @@
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.5",
     "react-scripts": "5.0.1",
-    "sass": "^1.94.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "concurrently \"npm run start:react\" \"npm run start:api\"",
-    "start:react": "react-scripts start",
-    "start:api": "json-server --watch db.json --port 4000",
+    "start:react": "cross-env NODE_OPTIONS=--no-deprecation react-scripts start",
+    "start:api": "npm run dev --prefix backend",
     "build": "react-scripts build"
   },
   "eslintConfig": {
@@ -43,6 +42,6 @@
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
-    "json-server": "^1.0.0-beta.3"
+    "cross-env": "^7.0.3"
   }
 }

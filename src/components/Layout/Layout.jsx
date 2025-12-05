@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import styles from "./Layout.module.scss";
+import styles from "./Layout.module.css";
 
 export default function Layout({ children }) {
   const { pathname } = useLocation();
@@ -8,7 +8,6 @@ export default function Layout({ children }) {
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <div className={styles.brand}>
-          <img src="/banner.jpg" alt="Agenda" className={styles.banner} />
           <h1 className={styles.title}>Agenda de Eventos por Cidade</h1>
         </div>
         <nav className={styles.nav}>
@@ -17,9 +16,6 @@ export default function Layout({ children }) {
         </nav>
       </header>
       <main className={styles.content}>{children}</main>
-      <footer className={styles.footer}>
-        <small>© {new Date().getFullYear()} Agenda Eventos</small>
-      </footer>
     </div>
   );
 }

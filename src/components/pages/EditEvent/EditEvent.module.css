@@ -1,0 +1,152 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.buttonRow {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buttonSave {
+  background-color: #3b82f6;
+}
+.buttonSave:hover {
+  background-color: #2563eb;
+}
+
+.buttonCancel {
+  background-color: #6b7280;
+}
+.buttonCancel:hover {
+  background-color: #4b5563;
+}
+
+.buttonDelete {
+  background-color: #ef4444;
+  margin-left: auto; /* Alinha o botão de excluir à direita */
+}
+.buttonDelete:hover {
+  background-color: #dc2626;
+}
+
+.mensagem {
+  padding: 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* Estilos para o diálogo de confirmação */
+.confirmDialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* Efeito de desfoque */
+}
+
+.confirmDialogContent {
+  background-color: #fff;
+  padding: 2.5rem; /* Mais padding */
+  border-radius: 0.75rem; /* Bordas mais arredondadas */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+  text-align: center;
+  max-width: 450px; /* Largura um pouco maior */
+  color: #111827;
+}
+
+.confirmDialogContent p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.confirmDialogContent .buttonRow {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  gap: 1rem; /* Espaçamento entre botões */
+  margin-top: 0; /* Remove margem superior desnecessária */
+}
+
+.confirmDialogContent .buttonDelete,
+.confirmDialogContent .buttonCancel {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex: 1; /* Para que os botões tenham largura igual */
+  max-width: 150px; /* Limita a largura máxima */
+}
+
+.confirmDialogContent .buttonDelete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.confirmDialogContent .buttonDelete:hover {
+  background-color: #dc2626;
+}
+
+.confirmDialogContent .buttonCancel {
+  background-color: #d1d5db;
+  color: #374151;
+}
+
+.confirmDialogContent .buttonCancel:hover {
+  background-color: #9ca3af;
+}

@@ -29,6 +29,36 @@
       "imagemUrl": "https://picsum.photos/seed/feira/600/400",
       "destaque": false,
       "status": "ativo"
+    },
+    {
+      "id": "3",
+      "titulo": "Concerto de Natal",
+      "descricao": "Músicas natalinas com a orquestra da cidade.",
+      "cidade": "Uberlândia",
+      "categoria": "Concerto",
+      "local": "Teatro Municipal",
+      "dataHoraInicio": "2025-12-20T19:30:00",
+      "dataHoraFim": "2025-12-20T21:00:00",
+      "gratuito": false,
+      "preco": 50,
+      "imagemUrl": "https://picsum.photos/seed/concerto/600/400",
+      "destaque": true,
+      "status": "ativo"
+    },
+    {
+      "id": "4",
+      "titulo": "Festival de Food Truck",
+      "descricao": "Os melhores food trucks da região em um só lugar.",
+      "cidade": "Ituiutaba",
+      "categoria": "Gastronomia",
+      "local": "Parque de Exposições",
+      "dataHoraInicio": "2026-01-15T18:00:00",
+      "dataHoraFim": "2026-01-17T23:00:00",
+      "gratuito": true,
+      "preco": null,
+      "imagemUrl": "https://picsum.photos/seed/foodtruck/600/400",
+      "destaque": false,
+      "status": "ativo"
     }
   ]
 }
